@@ -1,13 +1,158 @@
-<html>
-
+<html lang="en">
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Project Athlete</title>
 </head>
-
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
+<!-- Home Page-->
+<div data-role="page" id="home">
+    <!--Header-->
+    <div data-role="header" data-theme="a"> 
+    <h2>Home Page</h2>
+     <div data-role="navbar" data-theme="b">
+        <ul>
+            <li><a href="#PersonalP" data-transition="flow">Personal Page</a></li>
+            <li><a href="#FitnessT" data-transition="flow">Fitness Tracker</a></li>
+            <li><a href="#QualityL" data-transition="flow">Quality Life Tracker</a></li>
+        </ul>
+     </div>
+</div>
 
+<!--Content-->
+<div data-role="content" data-theme="a">
+    <b>Welcome to Project Athlete</b>
+    <br>
+    Here you'll find information on:
+    <ul>
+        <li>The amount of sleep you produce every single night.</li>
+        <li>An option to set personal goals long-term and short-term.</li>
+        <li>Keep track of Supplements you are taking and how much you are taking at the current time: Protein Powder, Creatine, and BCAA.</li>
+        <li>Daily workouts specific to your sport for example an NFL Wide receiver could use the app to display workouts that revolve around Routes, Speed drills, and Pyrometric.</li>
+        <li>Keep track of daily water intake.</li>
+        <li>Track your daily Nutrition including macro and carbs.</li>  
+    </ul>
+</div>
+
+<!--Home Page Footer-->
+<div data-role="footer" data-theme='a'>
+    <h3>Copyright 2024 by Matthew Pham</h3>
+</div>
+
+</div>
+<!--End of home page-->
+
+<!-- Personal Page-->
+<div data-role="page" id="PersonalP">
+    <!--Header-->
+    <div data-role="header" data-theme="a"> 
+    <h2>Personal Page</h2>
+     <div data-role="navbar" data-theme="b">
+        <ul>
+            <li><a href="#home" data-transition="flow">Home Page</a></li>
+            <li><a href="#FitnessT" data-transition="flow">Fitness Tracker</a></li>
+            <li><a href="#QualityL" data-transition="flow">Quality Life Tracker</a></li>
+        </ul>
+     </div>
+</div>
+
+<!--Content-->
+<div data-role="content" data-theme="a">
+    <p>Below will be the searchable dropdown menu that will display each Shared Data that users select.</p>
+    <button>Searchable dropdown menu</button>
+    <ul>
+        Advice will show using if statement:
+        <li>Water: https://www.hsph.harvard.edu/nutritionsource/water/</li>
+        <li>Sleep: https://www.sleepfoundation.org/physical-activity/athletic-performance-and-sleep</li>
+        <li>Muscle mass calculator: https://www.healthline.com/health/muscle-mass-percentage#muscle-percentage</li>
+    </ul>
+</div>
+
+<!--Personal Page Footer-->
+<div data-role="footer" data-theme='a'>
+    <h3>Copyright 2024 by Matthew Pham</h3>
+</div>
+
+</div>
+<!--End of Personal page-->
+
+<!-- Fitness Tracker Page-->
+<div data-role="page" id="FitnessT">
+    <!--Header-->
+    <div data-role="header" data-theme="a"> 
+    <h2>Fitness Tracker Page</h2>
+     <div data-role="navbar" data-theme="b">
+        <ul>
+            <li><a href="#home" data-transition="flow">Home Page</a></li>
+            <li><a href="#PersonalP" data-transition="flow">Personal Page</a></li>
+            <li><a href="#QualityL" data-transition="flow">Quality Life Tracker</a></li>
+        </ul>
+     </div>
+</div>
+
+
+<!--Content-->
+<div data-role="content" data-theme="a">
+    <label for="dlift">Daily Lift:</label>
+    <input type="text" id="dlift" name="dlift">
+      <p>Below will be the searchable dropdown menu that will allow users to select different sets and the number of reps they need for each lift.</p>
+      <button>Sets and Reps #</button>
+      <button type="button" id="submit">
+        Submit
+    </button>
+</div>
+
+<!--Fitness Tracker Page Footer-->
+<div data-role="footer" data-theme='a'>
+    <h3>Copyright 2024 by Matthew Pham</h3>
+</div>
+
+</div>
+<!--End of Fitness Tracker page-->
+
+<!-- Quality Life Tracker Page-->
+<div data-role="page" id="QualityL">
+    <!--Header-->
+    <div data-role="header" data-theme="a"> 
+    <h2>Quality Life Tracker Page</h2>
+     <div data-role="navbar" data-theme="b">
+        <ul>
+            <li><a href="#home" data-transition="flow">Home Page</a></li>
+            <li><a href="#FitnessT" data-transition="flow">Fitness Tracker</a></li>
+            <li><a href="#PersonalP" data-transition="flow">Personal Page</a></li>
+        </ul>
+     </div>
+</div>
+
+
+<!--Content-->
+<div data-role="content" data-theme="a">
+      <p>Below will be the searchable dropdown menu that will ask users to select from a list of options that display Nutrition/Sleep/Goals separately.</p>
+      <button>Select Option</button>
+      <label for="QualityLife">Enter Amount of #</label>
+      <input type="text" id="QualityLife" name="QualityLife">
+      <button type="button" id="submit">
+        Submit
+    </button>
+</div>
+
+<!--Quality Life Tracker Page Footer-->
+<div data-role="footer" data-theme='a'>
+    <h3>Copyright 2024 by Matthew Pham</h3>
+</div>
+
+</div>
+<!--End of Quality Life Tracker page-->
+</body>
 </html>
