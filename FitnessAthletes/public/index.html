@@ -4,13 +4,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="stylesheets/themes/my-custom-theme.min.css" />
+    <link rel="stylesheet" href="stylesheets/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="javascripts/main.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
 
 
     <title>Project Athlete</title>
@@ -38,10 +39,10 @@
     <ul>
         <li>The amount of sleep you produce every single night.</li>
         <li>An option to set personal goals long-term and short-term.</li>
-        <li>Keep track of Supplements you are taking and how much you are taking at the current time: Protein Powder, Creatine, and BCAA.</li>
+        <li>Keep track of the Supplements you are taking and how much you are taking at the current time: Protein Powder, Creatine, and BCAA.</li>
         <li>Daily workouts specific to your sport for example an NFL Wide receiver could use the app to display workouts that revolve around Routes, Speed drills, and Pyrometric.</li>
         <li>Keep track of daily water intake.</li>
-        <li>Track your daily Nutrition including macro and carbs.</li>  
+        <li>Track your daily Nutrition.</li>  
     </ul>
 </div>
 
@@ -69,14 +70,15 @@
 
 <!--Content-->
 <div data-role="content" data-theme="a">
-    <p>Below will be the searchable dropdown menu that will display each Shared Data that users select.</p>
-    <button>Searchable dropdown menu</button>
-    <ul>
-        Advice will show using if statement:
-        <li>Water: https://www.hsph.harvard.edu/nutritionsource/water/</li>
-        <li>Sleep: https://www.sleepfoundation.org/physical-activity/athletic-performance-and-sleep</li>
-        <li>Muscle mass calculator: https://www.healthline.com/health/muscle-mass-percentage#muscle-percentage</li>
-    </ul>
+    <label for="Fitness Tracker">Fitness Tracker: </label>
+    <div id="divFitnessList">
+        <ul id="FitnessList"></ul>
+    </div>
+
+    <label for="Quality Tracker">Quality Tracker: </label>
+    <div id="divQualityList">
+        <ul id="QualityList"></ul>
+    </div>
 </div>
 
 <!--Personal Page Footer-->
@@ -86,6 +88,74 @@
 
 </div>
 <!--End of Personal page-->
+
+<!-- Fitness Detail page-->
+<div data-role="page" id="FitnessDetail">
+    <!--Header-->
+    <div data-role="header" data-theme="a"> 
+    <h2>Fitness Detail Page</h2>
+     <div data-role="navbar" data-theme="b">
+        <ul>
+            <li><a href="#home" data-transition="flow">Home Page</a></li>
+            <li><a href="#FitnessT" data-transition="flow">Fitness Tracker</a></li>
+            <li><a href="#QualityL" data-transition="flow">Quality Life Tracker</a></li>
+        </ul>
+     </div>
+</div>
+
+<!--Content-->
+<div data-role="content" data-theme="a">
+
+    <ul>
+        Here are some websites that may be beneficial for your growth.
+        <li>Muscle mass calculator: https://www.healthline.com/health/muscle-mass-percentage#muscle-percentage</li>
+    </ul>
+    <p id ="workingFitnessID"></p>
+</div>
+
+<!--Fitness Detail Page Footer-->
+<div data-role="footer" data-theme='a'>
+    <h3>Copyright 2024 by Matthew Pham</h3>
+</div>
+
+</div>
+<!--End of Fitness Detail Page-->
+
+<!-- Quality Detail page-->
+<div data-role="page" id="QualityDetail">
+    <!--Header-->
+    <div data-role="header" data-theme="a"> 
+    <h2>Quality Of Life Detail Page</h2>
+     <div data-role="navbar" data-theme="b">
+        <ul>
+            <li><a href="#home" data-transition="flow">Home Page</a></li>
+            <li><a href="#FitnessT" data-transition="flow">Fitness Tracker</a></li>
+            <li><a href="#QualityL" data-transition="flow">Quality Life Tracker</a></li>
+        </ul>
+     </div>
+</div>
+
+<!--Content-->
+<div data-role="content" data-theme="a">
+
+    <ul>
+        Here are some websites that may be beneficial for your growth:
+        <br>
+        Focuses on Water:
+        <li>https://www.hsph.harvard.edu/nutritionsource/water/</li>
+        Focuses on proper Sleep:
+        <li>https://www.sleepfoundation.org/physical-activity/athletic-performance-and-sleep</li>
+    </ul>
+    <p id ="workingQualityID"></p>
+</div>
+
+<!--Quality Page Footer-->
+<div data-role="footer" data-theme='a'>
+    <h3>Copyright 2024 by Matthew Pham</h3>
+</div>
+
+</div>
+<!--End of Quality Detail Page-->
 
 <!-- Fitness Tracker Page-->
 <div data-role="page" id="FitnessT">
@@ -104,11 +174,17 @@
 
 <!--Content-->
 <div data-role="content" data-theme="a">
-    <label for="dlift">Daily Lift:</label>
+    <p>EXAMPLE: Squats 3 Sets of 6 Reps.</p>
+    <label for="dlift">Enter the workout:</label>
     <input type="text" id="dlift" name="dlift">
-      <p>Below will be the searchable dropdown menu that will allow users to select different sets and the number of reps they need for each lift.</p>
-      <button>Sets and Reps #</button>
-      <button type="button" id="submit">
+
+    <label for="setlift">Enter the total Sets:</label>
+    <input type="text" id="setlift" name="setlift">
+
+    <label for="replift">Enter the total Reps:</label>
+    <input type="text" id="replift" name="replift">
+
+      <button type="button" id="ftpsubmit">
         Submit
     </button>
 </div>
@@ -138,11 +214,34 @@
 
 <!--Content-->
 <div data-role="content" data-theme="a">
-      <p>Below will be the searchable dropdown menu that will ask users to select from a list of options that display Nutrition/Sleep/Goals separately.</p>
-      <button>Select Option</button>
-      <label for="QualityLife">Enter Amount of #</label>
-      <input type="text" id="QualityLife" name="QualityLife">
-      <button type="button" id="submit">
+
+      <!-- Nutrition-->
+      <label for="Supplements">Enter your supplements name: </label>
+      <input type="text" id="Supplements" name="Supplements">
+      <label for="SupplementsIntake">How much are you currently taking daily? (Scoop or Tablets)</label>
+      <input type="text" id="SupplementsIntake" name="SupplementsIntake">
+
+
+      <label for="water">How much water are you currently drinking everyday? (In Cups)</label>
+      <input type="text" id="water" name="water">
+
+      <!-- Macros -->
+      <label for="protein">Enter your daily Protein intake: </label>
+      <input type="text" id="protein" name="protein">
+
+      <label for="carbs">Enter your daily Carbs intake:</label>
+      <input type="text" id="carbs" name="carbs">
+
+      <!-- Sleep-->
+      <label for="Sleep">How many hours of sleep do you get a night?</label>
+      <input type="text" id="Sleep" name="Sleep">
+
+
+      <!-- Goals-->
+      <label for="Goals">Enter your personal goals: </label>
+      <input type="text" id="Goals" name="Goals">
+
+      <button type="button" id="qualitysubmit">
         Submit
     </button>
 </div>
